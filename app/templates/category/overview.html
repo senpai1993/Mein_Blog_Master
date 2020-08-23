@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for i in bingo %}
+        <h1>{{ i.id }}</h1>
+    {% endfor %}
+{% endblock %}
