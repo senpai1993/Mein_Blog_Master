@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titel %}Kategorien erstellen{% endblock %}
+{% block content %}
+    <h1>Kategorie erstellen</h1>
+    <div>
+        <form method="post" action="" role="form">
+            {{ form.csrf }}
+            <div class="form-group">
+                <label for="kategorie">{{ form.kategorie.label.text }}</label>
+                <input type="text" class="form-control" id="kategorie" name="kategorie"
+                       value="{{ form.kategorie.data }}">
+            </div>
+            <button type="submit" class="btn btn-primary">erstellen</button>
+        </form>
+    </div>
+{% endblock %}

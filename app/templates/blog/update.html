@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titel %}Blog ändern{% endblock %}
+{% block content %}
+    <h1>Blog ändern</h1>
+    <div>
+        <form method="post" action="" role="form">
+            {{ form.csrf }}
+            <div class="form-group">
+                <label for="title">{{ form.title.label.text }}</label>
+                <input type="text" class="form-control" id="title" name="title"
+                       value="{{ form.title.data }}">
+            </div>
+            <div class="form-group">
+                <label for="category">{{ form.category.label.text }}</label>
+                <input type="number" class="form-control" id="category" name="category"
+                       value="{{ form.category.data }}">
+            </div>
+            <div class="form-group">
+                <label for="text">{{ form.text.label.text }}</label>
+                <input type="text" class="form-control" id="text" name="text"
+                       value="{{ form.text.data }}">
+            </div>
+            <div class="form-group">
+                <label for="date">{{ form.date.label.text }}</label>
+                <input type="date" class="form-control" id="date" name="date"
+                       value="{{ form.date.data }}">
+            </div>
+            <button type="submit" class="btn btn-primary">ändern</button>
+        </form>
+    </div>
+{% endblock %}

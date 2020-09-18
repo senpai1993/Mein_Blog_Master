@@ -19,6 +19,9 @@ def create_app():
     from app.category import bp as category_bp
     app.register_blueprint(category_bp)
 
+    from app.blog import bp as blog_bp
+    app.register_blueprint(blog_bp)
+
     return app
 
 

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titel %}Kategorien ändern{% endblock %}
+{% block content %}
+    <h1>Kategorie ändern</h1>
+    <div>
+        <form method="post" action="" role="form">
+            {{ form.csrf }}
+            <div class="form-group">
+                <label for="kategorie">{{ form.kategorie.label.text }}</label>
+                <input type="text" class="form-control" id="kategorie" name="kategorie"
+                       value="{{ form.kategorie.data }}">
+            </div>
+            <button type="submit" class="btn btn-primary">ändern</button>
+        </form>
+    </div>
+{% endblock %}
