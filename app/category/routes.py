@@ -17,6 +17,7 @@ def overview():
 
 @bp.route('/category/erstellen', methods=['POST','GET'])
 def create():
+    flash("Kategorie erfolgreich erstellt!")
     form = Kategorieform(request.form)
     if request.method == 'POST' and form.validate():
         kategorie = Kategorie()
@@ -28,6 +29,7 @@ def create():
 
 @bp.route('/category/delete/<int:id>')
 def delete(id):
+    flash("Kategorie erfolgreich gelöscht!")
     kategorie = Kategorie.query.get_or_404(id)
     db.session.delete(kategorie)
     db.session.commit()
@@ -35,6 +37,7 @@ def delete(id):
 
 @bp.route('/category/modify/<int:id>', methods=['POST','GET'])
 def update(id):
+    flash("Kategorie erfolgreich aktualisiert!")
     kategorie = Kategorie.query.get_or_404(id)
     form = Kategorieform(request.form)
     if request.method == 'POST' and form.validate():
@@ -44,7 +47,6 @@ def update(id):
         return redirect(url_for("category.overview"))
     form.kategorie.data = kategorie.value
     return render_template("category/update.html",form=form)
-
 
 
 

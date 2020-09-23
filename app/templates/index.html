@@ -1,8 +1,9 @@
-{% extends "base.html" %}
-
-{% block titel %}Unser Blog{% endblock %}
+{% extends 'base.html' %}
 {% block content %}
-<h1>Unser Blog</h1>
-
-
+    {% for b in blog %}
+        <h1> {{ b.titel }}
+        </h1>
+        <h3> {{ b.Kategorie.value }} </h3>
+         <a href="{{ url_for("blog.blog",id=b.id) }}" class="btn btn-primary">Mehr</a>
+    {% endfor %}
 {% endblock %}

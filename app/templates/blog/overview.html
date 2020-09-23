@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for blogeintrag in kategorie.blogeintrag %}
-        <h1> {{ blogeintrag.titel }}
+    {% for b in blog %}
+        <h1> {{ b.titel }}
         </h1>
-        <h3> {{ kategorie.value }} </h3>
-         <a href="{{ url_for("blog.blog",id=blogeintrag.id) }}" class="btn btn-primary">Mehr</a>
+        <h3> {{ b.Kategorie.value }} </h3>
+         <a href="{{ url_for("blog.blog",id=b.id) }}" class="btn btn-primary">Mehr</a>
     {% endfor %}
 {% endblock %}
 

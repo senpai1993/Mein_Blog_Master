@@ -4,6 +4,7 @@
         <h1><a href="{{ url_for("blog.get",id=kategorie.id) }}">
             {{ kategorie.value }}</a><a href="{{ url_for("category.delete",id=kategorie.id) }}" class="btn btn-danger">Löschen</a>
         <a href="{{ url_for("category.update",id=kategorie.id) }}" class="btn btn-primary">Ändern</a>
+        <p> {{ kategorie.blogeintrag|length}} </p>
         </h1>
     {% endfor %}
 {% endblock %}
