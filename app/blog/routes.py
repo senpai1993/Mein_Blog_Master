@@ -62,7 +62,7 @@ def update(id):
     form.category.data = blogeintrag.kategorie
     form.text.data = blogeintrag.text
     form.date.data = blogeintrag.datum
-    return render_template("blog/update.html", form=form)
+    return render_template("blog/update.html", form=form, kategorien=Kategorie.query.all())
 
 @bp.route('/blog/category/overview/<int:id>')
 def get(id):
